@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#00B0FF</item>
+        <item name="colorPrimaryDark">#00B0FF</item>
+        <item name="colorAccent">#00B0FF</item>
+    </style>
+
+    <style name="RowElementText"></style>
+</resources>
