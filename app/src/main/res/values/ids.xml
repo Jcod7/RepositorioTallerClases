@@ -2,4 +2,5 @@
 <resources>
     <item name="buttonRegresar" type="id" />
     <item name="buttonCountSteps" type="id" />
+    <item name="textViewSteps" type="id" />
 </resources>

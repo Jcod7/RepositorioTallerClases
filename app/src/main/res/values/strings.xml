@@ -78,13 +78,13 @@
     <string name="iniciar_conteo">Iniciar Conteo</string>
     <string name="detener_conteo">Detener Conteo</string>
     <string name="contando_pasos">Contando pasos...</string>
-    <string name="pasos">Pasos: %1$d</string>
+    <string name="pasos">Pasos: </string>
     <string name="no_sensor_steps">Sensor de pasos no disponible</string>
     <string name="configuracion_gps_incorrecta" />
     <string name="no_se_detect_sensor_de_pasos">No se detectó sensor de pasos.</string>
     <string name="contando_pass">Contando pasos...</string>
     <string name="detener_conte">Detener conteo</string>
-    <string name="pass">Pasos: %1$s</string>
+    <string name="pass">Pasos: </string>
     <string name="iniciar_cont">Iniciar conteo</string>
     <string name="no_se_pudo_obtener_la_ubicaci_n">No se pudo obtener la ubicación</string>
     <string name="ubicaci_n_no_v_lida">Ubicación no válida</string>
@@ -92,7 +92,7 @@
     <string name="ubicaci_n_no_obtenida">Ubicación no obtenida</string>
     <string name="pas">Pasos: 0</string>
     <string name="regreso">Regresar</string>
-    <string name="paso">Paso: %1$s</string>
+    <string name="paso">Paso: </string>
     <string name="iniciar_contador_de_pasos">Iniciar Contador de Pasos</string>
     <string name="pasit">Pasos: 0</string>
     <string name="tomar_foto">Tomar Foto</string>
@@ -153,6 +153,20 @@
     <string name="guardar_foto">Guardar Foto</string>
     <string name="camar_de_fotos">Camar de Fotos</string>
     <string name="ubicaci_n_gps">Ubicación GPS</string>
+    <string name="regresarform">Regresar</string>
+    <string name="regresarcam">regresarcam</string>
+    <string name="regresarbt">Regresar</string>
+    <string name="regresabt">Regresar</string>
+    <string name="regresarrow">Regresar</string>
+    <string name="regresarimg">Regresar</string>
+    <string name="regresarro">Regresar</string>
+    <string name="regresarpod">Regresar</string>
+    <string name="pasospo">Pasos: </string>
+    <string name="regresarcamara">Regresar</string>
+    <string name="pasospod">Pasos: %1$s</string>
+    <string name="permiso_rechazado">permisos rechasados</string>
+    <string name="permiso_necesario" />
+    <string name="pasospr">Pasos: %1$s</string>
 
 
 </resources>

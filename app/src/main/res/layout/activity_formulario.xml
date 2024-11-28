@@ -10,18 +10,18 @@
         android:id="@+id/titleTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/formulario"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_marginBottom="5dp"
         android:gravity="center"
+        android:text="@string/formulario"
         android:textColor="@color/primary_text"
-        android:layout_marginBottom="32dp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginHorizontal="16dp">
+        android:layout_marginBottom="5dp"
+        android:layout_marginHorizontal="5dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etNombres"
@@ -36,8 +36,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginHorizontal="16dp">
+        android:layout_marginBottom="5dp"
+        android:layout_marginHorizontal="5dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etApellidos"
@@ -52,8 +52,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginHorizontal="16dp">
+        android:layout_marginBottom="5dp"
+        android:layout_marginHorizontal="5dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etCorreo"
@@ -66,18 +66,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="374dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/cbHombre"
-            android:layout_width="wrap_content"
+            android:layout_width="163dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
             android:text="@string/hombre"
-            android:textColor="@color/primary_text"
-            android:layout_marginEnd="16dp" />
+            android:textColor="@color/primary_text" />
 
         <CheckBox
             android:id="@+id/cbMujer"
@@ -90,8 +90,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginHorizontal="16dp">
+        android:layout_marginBottom="5dp"
+        android:layout_marginHorizontal="5dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etTelefono1"
@@ -106,8 +106,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginHorizontal="16dp">
+        android:layout_marginBottom="5dp"
+        android:layout_marginHorizontal="5dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etTelefono2"
@@ -124,22 +124,33 @@
         android:layout_width="161dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="5dp"
         android:backgroundTint="@color/button_background"
         android:text="@string/enviar"
         android:textColor="@color/button_text" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="383dp"
-        android:layout_height="34dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="@string/datos_se_mostraran_aqui" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="93dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="363dp"
+        android:layout_height="116dp"
+        android:layout_marginTop="5dp"
         android:text=""
         android:textColor="@color/primary_text" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegresar"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/button_background"
+        android:text="@string/regresarform"
+        android:textColor="@color/button_text" />
 </LinearLayout>

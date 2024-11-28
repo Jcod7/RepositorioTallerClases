@@ -32,4 +32,15 @@
         android:layout_width="match_parent"
         android:layout_height="169dp" />
 
+    <!-- Botón de regresar -->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:text="@string/regresarimg"
+        android:textColor="@android:color/white" />
+
 </LinearLayout>

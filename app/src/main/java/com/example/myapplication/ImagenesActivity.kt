@@ -28,6 +28,12 @@ class ImagenesActivity : AppCompatActivity() {
                 textoAparecer.visibility = View.VISIBLE // Mostrar el texto
             }
         }
+        val backButton = findViewById<Button>(R.id.backButton)  // Botón de regresar
+        // Acción al presionar el botón de "Regresar"
+        backButton.setOnClickListener {
+            finish() // Esto cierra la actividad actual y regresa a la anterior
+        }
+
     }
 }
 

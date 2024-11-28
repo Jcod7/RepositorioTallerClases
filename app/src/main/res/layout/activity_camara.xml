@@ -6,7 +6,6 @@
     android:padding="16dp"
     android:gravity="center">
 
-
     <TextView
         android:id="@+id/textView5"
         android:layout_width="196dp"
@@ -36,5 +35,13 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#B85334"
         android:text="@string/guardar_foto" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#4CAF50"
+        android:text="@string/regresarcamara" />
 
 </LinearLayout>

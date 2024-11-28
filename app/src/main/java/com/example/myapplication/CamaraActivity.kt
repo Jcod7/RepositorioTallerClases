@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
@@ -15,6 +14,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import java.io.OutputStream
 
+@Suppress("DEPRECATION")
 class CamaraActivity : AppCompatActivity() {
 
     private lateinit var imageView: ImageView
@@ -42,23 +42,26 @@ class CamaraActivity : AppCompatActivity() {
 
         val btnTakePicture = findViewById<Button>(R.id.buttonTakePicture)
         val btnSavePicture = findViewById<Button>(R.id.buttonSavePicture)
+        val btnRegresar = findViewById<Button>(R.id.btnRegresar) // Referencia al botón regresar
 
-        // Establecer el listener para el botón de tomar la foto
+        // Listener para tomar la foto
         btnTakePicture.setOnClickListener {
-            // Crear el intent para capturar la foto
             val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            // Lanzar la actividad usando el registrador
             takePictureLauncher.launch(cameraIntent)
         }
 
-        // Establecer el listener para el botón de guardar la foto
+        // Listener para guardar la foto
         btnSavePicture.setOnClickListener {
-            // Verificar si hay una imagen capturada para guardar
             capturedBitmap?.let { bitmap ->
                 saveImageToGallery(bitmap)
             } ?: run {
                 Toast.makeText(this, "No hay imagen para guardar", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        // Listener para el botón regresar
+        btnRegresar.setOnClickListener {
+            finish() // Cierra la actividad actual y regresa a la anterior
         }
     }
 
@@ -68,7 +71,7 @@ class CamaraActivity : AppCompatActivity() {
             val contentValues = ContentValues().apply {
                 put(MediaStore.Images.Media.DISPLAY_NAME, "captura_${System.currentTimeMillis()}.jpg")
                 put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
-                put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/MyAppImages") // Carpeta en la galería
+                put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/MyAppImages")
             }
 
             val contentResolver = contentResolver
@@ -80,11 +83,9 @@ class CamaraActivity : AppCompatActivity() {
                 }
                 outputStream?.close()
 
-                // Informar al usuario que la imagen ha sido guardada
                 Toast.makeText(this, "Imagen guardada en la galería", Toast.LENGTH_SHORT).show()
             }
         } catch (e: Exception) {
-            // Si ocurre un error, mostrar un mensaje
             Toast.makeText(this, "Error al guardar la imagen", Toast.LENGTH_SHORT).show()
         }
     }

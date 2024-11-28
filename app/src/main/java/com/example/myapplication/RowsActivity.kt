@@ -23,7 +23,9 @@ class RowsActivity : AppCompatActivity() {
         val acceptButton = findViewById<Button>(R.id.acceptButton)
         val cancelButton = findViewById<Button>(R.id.cancelButton)
         val infoButton = findViewById<Button>(R.id.infoButton)
+        val backButton = findViewById<Button>(R.id.buttonBack) // Botón de regreso
 
+        // Establecer la lógica para cada botón
         acceptButton.setOnClickListener {
             profileName.text = getString(R.string.aceptado)
         }
@@ -34,6 +36,11 @@ class RowsActivity : AppCompatActivity() {
 
         infoButton.setOnClickListener {
             profileName.text = getString(R.string.info_mostrada)
+        }
+
+        // Configurar el botón de regreso
+        backButton.setOnClickListener {
+            onBackPressed()
         }
     }
 }

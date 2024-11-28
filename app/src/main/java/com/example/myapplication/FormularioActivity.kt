@@ -15,7 +15,7 @@ class FormularioActivity : AppCompatActivity() {
     private lateinit var etCorreo: TextInputEditText
     private lateinit var etTelefono1: TextInputEditText
     private lateinit var etTelefono2: TextInputEditText
-
+    private lateinit var btnRegresar: MaterialButton
     private lateinit var cbHombre: CheckBox
     private lateinit var cbMujer: CheckBox
     private lateinit var btnEnviar: MaterialButton
@@ -38,10 +38,11 @@ class FormularioActivity : AppCompatActivity() {
         etCorreo = findViewById(R.id.etCorreo)
         etTelefono1 = findViewById(R.id.etTelefono1)
         etTelefono2 = findViewById(R.id.etTelefono2)
+        btnRegresar = findViewById(R.id.btnRegresar)
         cbHombre = findViewById(R.id.cbHombre)
         cbMujer = findViewById(R.id.cbMujer)
         btnEnviar = findViewById(R.id.btnEnviar)
-        tvDatos = findViewById(R.id.textView2)
+        tvDatos = findViewById(R.id.textView2) // Asegúrate de que el ID corresponda a la vista de datos
     }
 
     private fun setupListeners() {
@@ -58,6 +59,11 @@ class FormularioActivity : AppCompatActivity() {
                 displayData()
                 Toast.makeText(this, "Datos enviados correctamente.", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        btnRegresar.setOnClickListener {
+            // Cerrar la actividad y regresar a la actividad anterior
+            finish()
         }
     }
 
