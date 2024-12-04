@@ -45,8 +45,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#5C9E5F"
             android:text="@string/acepta"
-            android:backgroundTint="@android:color/holo_green_light"
             android:textColor="@android:color/white" />
 
         <!-- Columna 2 -->
@@ -54,8 +54,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#B42424"
             android:text="@string/cancela"
-            android:backgroundTint="@android:color/holo_red_light"
             android:textColor="@android:color/white" />
     </LinearLayout>
 
@@ -90,8 +90,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@android:color/holo_blue_light"
+        android:background="#0378A4"
         android:gravity="center"
         android:text="@string/regresarro"
-        android:textColor="@android:color/white" />
+        android:textColor="#FFFFFF" />
 </LinearLayout>

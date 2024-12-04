@@ -1,4 +1,3 @@
-
 package com.example.myapplication
 
 import android.annotation.SuppressLint
@@ -18,10 +17,10 @@ class PodometroActivity : AppCompatActivity(), SensorEventListener {
     private var initialSteps: Int = 0
     private var currentSteps: Int = 0
     private var countingSteps = false
-    private lateinit var tv_steps: TextView
-    private lateinit var btn_count_steps: Button
-    private lateinit var tv_header: TextView
-    private lateinit var btn_back: Button // Declaramos el botón de regreso
+    private lateinit var tvSteps: TextView
+    private lateinit var btnCountSteps: Button
+    private lateinit var tvHeader: TextView
+    private lateinit var btnBack: Button // Botón de regreso
 
     @SuppressLint("StringFormatMatches", "StringFormatInvalid")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,35 +32,35 @@ class PodometroActivity : AppCompatActivity(), SensorEventListener {
         stepSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
 
         // Referencias a los elementos de la interfaz
-        tv_header = findViewById(R.id.textViewHeader) // Encabezado
-        tv_steps = findViewById(R.id.textViewSteps)
-        btn_count_steps = findViewById(R.id.buttonCountSteps)
-        btn_back = findViewById(R.id.buttonBack) // Asignamos el botón Regresar
+        tvHeader = findViewById(R.id.textViewHeader) // Encabezado
+        tvSteps = findViewById(R.id.textViewSteps)
+        btnCountSteps = findViewById(R.id.buttonCountSteps)
+        btnBack = findViewById(R.id.buttonBack) // Botón Regresar
 
         // Verificar si el dispositivo tiene un sensor de pasos
         if (stepSensor == null) {
-            tv_steps.text = getString(R.string.no_se_detect_sensor_de_pasos)
+            tvSteps.text = getString(R.string.no_se_detect_sensor_de_pasos)
         }
 
         // Configuración del botón para iniciar o detener el conteo de pasos
-        btn_count_steps.setOnClickListener {
+        btnCountSteps.setOnClickListener {
             if (!countingSteps) {
                 countingSteps = true
                 initialSteps = 0
                 currentSteps = 0
                 sensorManager.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_UI)
-                tv_steps.text = getString(R.string.contando_pass)
-                btn_count_steps.text = getString(R.string.detener_conte)
+                tvSteps.text = getString(R.string.contando_pass)
+                btnCountSteps.text = getString(R.string.detener_conte)
             } else {
                 countingSteps = false
                 sensorManager.unregisterListener(this)
-                tv_steps.text = getString(R.string.pass, currentSteps)
-                btn_count_steps.text = getString(R.string.iniciar_con)
+                tvSteps.text = getString(R.string.pass, currentSteps)
+                btnCountSteps.text = getString(R.string.iniciar_con)
             }
         }
 
         // Configuración del botón "Regresar"
-        btn_back.setOnClickListener {
+        btnBack.setOnClickListener {
             finish() // Esto termina la actividad y regresa a la anterior
         }
     }
@@ -87,7 +86,7 @@ class PodometroActivity : AppCompatActivity(), SensorEventListener {
                 initialSteps = event.values[0].toInt()
             }
             currentSteps = event.values[0].toInt() - initialSteps
-            tv_steps.text = "Pasos: $currentSteps"
+            tvSteps.text = "Pasos: $currentSteps"
         }
     }
 

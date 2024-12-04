@@ -3,4 +3,8 @@
     <item name="buttonRegresar" type="id" />
     <item name="buttonCountSteps" type="id" />
     <item name="textViewSteps" type="id" />
+    <item name="login_email" type="id" />
+    <item name="login_password" type="id" />
+    <item name="login_button" type="id" />
+    <item name="signup_email" type="id" />
 </resources>

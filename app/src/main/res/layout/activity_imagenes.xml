@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/imagen"
-        android:layout_width="411dp"
+        android:layout_width="350dp"
         android:layout_height="278dp"
         android:src="@drawable/perrito"
         tools:ignore="ContentDescription" />
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@android:color/holo_red_light"
+        android:backgroundTint="#E04177"
         android:text="@string/regresarimg"
         android:textColor="@android:color/white" />
 

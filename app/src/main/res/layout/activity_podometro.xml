@@ -24,9 +24,9 @@
         android:id="@+id/buttonCountSteps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/iniciar_con"
-        android:backgroundTint="@android:color/holo_green_light"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#66BC6A"
+        android:text="@string/iniciar_con" />
 
     <!-- Campo para mostrar el conteo de pasos -->
     <TextView
@@ -37,14 +37,14 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="16dp"
         android:text="@string/pasoss"
-        android:textColor="@android:color/holo_blue_dark" />
+        android:textColor="#447C83" />
 
     <Button
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/regresarpod"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#D92828"
+        android:text="@string/regresarpod" />
 
 </LinearLayout>

@@ -27,16 +27,18 @@
         android:textColor="#333333"
         android:textSize="16sp" />
 
+    <!-- Botón con un mejor contraste de texto -->
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
-        android:background="@color/colorPrimary"
+        android:background="#81D4FA"
         android:padding="16dp"
         android:text="@string/obtener_ubicaci_n_gps"
-        android:textColor="#ffffff" />
+        android:textColor="#FFFFFF" /> <!-- Texto blanco para buen contraste -->
+
 
     <Button
         android:id="@+id/buttonRegresar"
@@ -44,9 +46,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#2196F3"
+        android:backgroundTint="#D3225E"
         android:padding="16dp"
         android:text="@string/regreso"
-        android:textColor="#ffffff" />
+        android:textColor="#FFFFFF" /> <!-- Texto blanco para buen contraste -->
 
 </LinearLayout>

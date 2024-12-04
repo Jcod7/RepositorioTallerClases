@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -8,10 +9,13 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="196dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="@string/camar_de_fotos"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:contentDescription="@string/descripcion_camara"
+        tools:ignore="InefficientWeight,Suspicious0dp" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -19,29 +23,33 @@
         android:layout_height="463dp"
         android:layout_marginTop="20dp"
         android:contentDescription="@string/todo"
-        android:src="@android:drawable/ic_menu_camera" />
+        android:src="@android:drawable/ic_menu_camera"
+        android:background="@android:color/black" />
 
     <Button
         android:id="@+id/buttonTakePicture"
         android:layout_width="173dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#33828C"
-        android:text="@string/tomar_foto" />
+        android:backgroundTint="#80CBC4"
+        android:text="@string/tomar_foto"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/buttonSavePicture"
         android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#B85334"
-        android:text="@string/guardar_foto" />
+        android:backgroundTint="#227297"
+        android:text="@string/guardar_foto"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/btnRegresar"
         android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#4CAF50"
-        android:text="@string/regresarcamara" />
+        android:backgroundTint="#B81E52"
+        android:text="@string/regresarcamara"
+        android:textColor="#ffffff" />
 
 </LinearLayout>

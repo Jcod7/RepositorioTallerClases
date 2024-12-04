@@ -1,5 +1,4 @@
 package com.example.myapplication
-
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.location.Geocoder
@@ -16,9 +15,9 @@ import com.google.android.gms.location.*
 @Suppress("DEPRECATION")
 class GpsActivity : AppCompatActivity() {
 
-    lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+    private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
 
-    private val LOCATION_PERMISSION_REQUEST_CODE = 101
+    private val locationPermissionRequestCode = 101
 
     @SuppressLint("MissingInflatedId", "StringFormatMatches")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +27,8 @@ class GpsActivity : AppCompatActivity() {
         // Inicializar FusedLocationProviderClient
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
 
-        val btn_gpscalcular = findViewById<Button>(R.id.button1)
-        val tv_mensaje = findViewById<TextView>(R.id.textView)
+        val btnGpsCalcular = findViewById<Button>(R.id.button1)
+        val tvMensaje = findViewById<TextView>(R.id.textView)
 
         // Verificar permisos al inicio
         if (!isLocationPermissionGranted()) {
@@ -37,18 +36,17 @@ class GpsActivity : AppCompatActivity() {
         }
 
         // Acción del botón para obtener la ubicación
-        btn_gpscalcular.setOnClickListener {
-            tv_mensaje.text = getString(R.string.obteniendo_ubicacion)
-            findLocation(tv_mensaje)
+        btnGpsCalcular.setOnClickListener {
+            tvMensaje.text = getString(R.string.obteniendo_ubicacion)
+            findLocation(tvMensaje)
         }
 
-        regresar()
+        // Acción del botón de regresar
+        setupRegresarButton()
     }
 
-    // Función de regreso
-
-
-    private fun regresar() {
+    // Función para configurar la acción de regresar
+    private fun setupRegresarButton() {
         val buttonRegresar = findViewById<Button>(R.id.buttonRegresar)
         buttonRegresar.setOnClickListener {
             finish()  // Cierra la actividad actual
@@ -72,7 +70,7 @@ class GpsActivity : AppCompatActivity() {
         ActivityCompat.requestPermissions(
             this,
             arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
-            LOCATION_PERMISSION_REQUEST_CODE
+            locationPermissionRequestCode
         )
     }
 
@@ -84,7 +82,7 @@ class GpsActivity : AppCompatActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
-        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+        if (requestCode == locationPermissionRequestCode) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 findLocation(findViewById(R.id.textView))
             } else {
@@ -94,7 +92,7 @@ class GpsActivity : AppCompatActivity() {
     }
 
     @SuppressLint("MissingPermission", "StringFormatInvalid")
-    private fun findLocation(tv_mensaje: TextView) {
+    private fun findLocation(tvMensaje: TextView) {
         val task = fusedLocationProviderClient.lastLocation
         task.addOnSuccessListener { location ->
             if (location != null) {
@@ -102,13 +100,13 @@ class GpsActivity : AppCompatActivity() {
                 if (location.latitude != 0.0 && location.longitude != 0.0) {
                     val address = getAddress(location.latitude, location.longitude)
                     val msg = "Latitud: ${location.latitude}, Longitud: ${location.longitude}\nDirección: $address"
-                    tv_mensaje.text = msg
+                    tvMensaje.text = msg
                     Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
                 } else {
-                    tv_mensaje.text = getString(R.string.ubicaci_n_no_v_lida)
+                    tvMensaje.text = getString(R.string.ubicaci_n_no_v_lida)
                 }
             } else {
-                tv_mensaje.text = getString(R.string.no_se_pudo_obtener_la_ubicaci_n)
+                tvMensaje.text = getString(R.string.no_se_pudo_obtener_la_ubicaci_n)
             }
         }
     }

@@ -167,6 +167,19 @@
     <string name="permiso_rechazado">permisos rechasados</string>
     <string name="permiso_necesario" />
     <string name="pasospr">Pasos: %1$s</string>
+    <string name="registro_de_usuario">Registro de Usuario</string>
+    <string name="login_de_usuarios">Login de Usuarios</string>
+    <string name="descripcion_camaraçç">camara_foto_descripcion</string>
+    <string name="descripcion_camara">desc_camara</string>
+    <string name="nombre">Nombre</string>
+    <string name="nombre_apellido">Juan Pérez</string>
+    <string name="edad">Edad</string>
+    <string name="años">28 años</string>
+    <string name="email">Correo</string>
+    <string name="email_direccion">juan.perez@email.com</string>
+    <string name="direccion">Dirección</string>
+    <string name="dir">Calle Ficticia 123, Quito</string>
+    <string name="nombapelli">Carlos Martínez</string>
 
 
 </resources>

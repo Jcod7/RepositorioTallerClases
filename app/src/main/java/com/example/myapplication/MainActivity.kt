@@ -51,5 +51,14 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.BtnCamara).setOnClickListener {
             startActivity(Intent(this, CamaraActivity::class.java))
         }
+
+
+        findViewById<Button>(R.id.btnRegistro).setOnClickListener {
+            startActivity(Intent(this, RegistroActivity::class.java))
+        }
+        findViewById<Button>(R.id.btnlogin).setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+
     }
 }

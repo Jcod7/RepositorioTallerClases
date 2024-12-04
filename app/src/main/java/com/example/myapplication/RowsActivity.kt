@@ -38,9 +38,8 @@ class RowsActivity : AppCompatActivity() {
             profileName.text = getString(R.string.info_mostrada)
         }
 
-        // Configurar el botón de regreso
         backButton.setOnClickListener {
-            onBackPressed()
+            finish()
         }
     }
 }

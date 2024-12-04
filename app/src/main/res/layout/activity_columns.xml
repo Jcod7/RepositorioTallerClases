@@ -9,7 +9,6 @@
     android:gravity="center"
     android:background="@android:color/white">
 
-    <!-- CardView para la imagen, título y subtítulo -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +22,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Imagen dentro de CardView -->
             <ImageView
                 android:id="@+id/profileImage"
                 android:layout_width="150dp"
@@ -31,9 +29,10 @@
                 android:src="@drawable/ic_launcher_foreground"
                 android:layout_gravity="center"
                 android:contentDescription="@string/imagen_perfil"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/darker_gray"
+                />
 
-            <!-- Título dentro de CardView -->
             <TextView
                 android:id="@+id/titleText"
                 android:layout_width="wrap_content"
@@ -44,39 +43,124 @@
                 android:gravity="center"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Subtítulo dentro de CardView -->
             <TextView
                 android:id="@+id/subtitleText"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/ingrese_su_Info"
                 android:textSize="16sp"
                 android:gravity="center"
-                android:layout_marginBottom="16dp" />
-
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8dp" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-    <!-- Campo de entrada -->
-    <EditText
-        android:id="@+id/inputField"
+    <!-- Tabla con filas y columnas -->
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/nombres"
-        android:padding="16dp"
-        android:layout_marginBottom="16dp"
-        tools:ignore="Autofill,TextFields" />
+        android:stretchColumns="1"
+        android:layout_marginBottom="16dp">
 
+        <TableRow>
+            <TextView
+                android:text="@string/nombre"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="16sp" />
 
+            <TextView
+                android:text="@string/nombre_apellido"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/edad"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="16sp" />
+
+            <TextView
+                android:text="@string/años"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/email"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="16sp" />
+
+            <TextView
+                android:text="@string/email_direccion"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/direccion"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="16sp" />
+
+            <TextView
+                android:text="@string/dir"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="16sp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <!-- Campo de entrada con datos de ejemplo -->
     <Button
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="@android:color/holo_blue_light"
+        android:backgroundTint="#1565C0"
         android:text="@string/registrar"
         android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/inputField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/nombres"
+        android:text="@string/nombapelli"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        tools:ignore="Autofill,InefficientWeight,TextFields" />
+
+    <!-- Botón de registro con un contraste adecuado -->
+
+    <!-- Botón de regreso con un contraste adecuado -->
 
     <Button
         android:id="@+id/backButton"
@@ -84,7 +168,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@android:color/holo_red_light"
+        android:backgroundTint="#D32F2F"
         android:text="@string/regresarbt"
         android:textColor="@android:color/white" />
 </LinearLayout>
